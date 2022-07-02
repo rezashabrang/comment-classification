@@ -1,0 +1,13 @@
+# This file contains values from Cookiecutter
+
+default_context:
+  project_name: "comment-classification"
+  project_description: "Classfiying comments using deep learning & Transformers."
+  organization: "comment-classification"
+  license: "MIT"
+  minimal_python_version: 3.9
+  github_name: "comment_classification"
+  email: "rezashabrang.m@gmail.com"
+  version: "0.1.0"
+  line_length: "88"
+  create_example_template: "none"
