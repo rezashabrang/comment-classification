@@ -30,7 +30,17 @@ classifiers = [  #! Update me
 
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = ">=3.8,<3.11"
+transformers = "^4.20.1"
+pandas = "^1.4.3"
+clean-text = {extras = ["gpl"], version = "^0.6.0"}
+scikit-learn = "^1.1.1"
+hazm = "^0.7.0"
+plotly = "^5.9.0"
+tensorflow = "^2.9.1"
+jupyter = "^1.0.0"
+ipywidgets = "^7.7.1"
+SQLAlchemy = "^1.4.39"
 
 [tool.poetry.dev-dependencies]
 bandit = "^1.7.1"
@@ -53,6 +63,8 @@ anybadge = "*"
 pybadges = "*"
 radon = "*"
 interrogate = "*"
+ipykernel = "^6.15.0"
+notebook = "^6.4.12"
 
 [tool.black]
 # https://github.com/psf/black

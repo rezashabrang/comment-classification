@@ -1,0 +1,41 @@
+version: "3.7"
+
+services:
+    comments-db:
+        image: mysql
+        container_name: comments-db
+        restart: always
+        networks:
+            - comment-net
+        environment:
+            MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+            MYSQL_DATABASE: ${MYSQL_DATABASE}
+            MYSQL_USER: ${MYSQL_USER}
+            MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+        ports:
+            - 8081:3306
+        volumes:
+            - comments-vol:/var/lib/mysql
+
+    adminer:
+        image: adminer:latest
+        container_name: comments-adminer
+        networks:
+            - comment-net
+        depends_on:
+            - comments-db
+        ports:
+            - 8080:8080
+
+networks:
+    comment-net:
+        name: comment-net
+
+volumes:
+    comments-vol:
+        name: comments-vol
+        driver: local
+        driver_opts:
+            type: 'none'
+            o: 'bind'
+            device: '/data/docker-volumes/comment-vol/'

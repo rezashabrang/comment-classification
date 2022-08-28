@@ -619,4 +619,9 @@ MigrationBackup/
 # Project scope ignores
 .env
 sandbox/
+data/
 
+comment_classification/R\&D/model
+*.csv
+*.html
+*.xlsx
